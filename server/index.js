@@ -27,7 +27,7 @@ app.use(cors())
 app.use("/assets", express.static(path.join(__dirname, 'public/assets')))
 
 import UserRouter from "./Router/UserRouter.js"
-// import PostRouter from "./Router/PostRouter.js"
+import PostRouter from "./Router/PostRouter.js"
 
 
 // FILE STORAGE
@@ -44,7 +44,7 @@ const upload = multer({storage})
 // connectDB()
 
 app.use("user", UserRouter)
-// app.use("post", PostRouter)
+app.use("post", PostRouter)
 
 
 const PORT = process.env.PORT || 4001
